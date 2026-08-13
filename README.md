@@ -21,17 +21,19 @@ Es el puente entre cualquier computadora (donde se hace la sesión de nivelació
 
 ```
 Claude Code Routines                 GitHub (este repo,                   Modo Chat (Project,
- (corre en la nube de                 fuente de verdad)                    sesión de nivelación)
- Anthropic, sin depender                    |                                      |
- de ninguna compu prendida)          xlsx oficial + mapa_gaps.md          Trae lo último del repo
-       |                             + CLAUDE.md (instrucciones)          (Sync del conector, o
-  Clona el repo fresco,               |                                   pedirle a Claude que
-  lee CLAUDE.md automático,    PRs abiertos en ramas claude/[país]-       clone el repo directo)
-  investiga (Generation/       [fecha], candidato + log                   revisa cada PR abierto,
-  Commercial Clients, o        (se acumulan, nunca se                     muestra diff, aplica lo
-  lo que indique la tarea      sobrescriben)                              aprobado al xlsx oficial,
-  puntual de esa corrida)                                                 sube la versión nueva,
-  abre PR contra main                                                     mergea o cierra el PR
+                                       fuente de verdad)                    uso puntual)
+       |                                    |                                      |
+  Clona el repo, lee CLAUDE.md,      PRs abiertos en ramas claude/         Ya NO es el gate de
+  investiga, y abre PR con:          [país]-[fecha], con candidato +       merge para PRs de
+  candidato_[país]_[fecha].xlsx +    log + diff de mapa_gaps_mercado.md    Routines — Nicolás
+  log_[país]_[fecha].md +            en el mismo PR                       revisa y mergea eso
+  diff de mapa_gaps_mercado.md                                            directo en GitHub.
+                                     Nicolás revisa el PR en GitHub y
+                                     mergea directo cuando confía en       Chat queda para:
+                                     el resumen — xlsx + gap map           sesiones de nivelación
+                                     quedan sincronizados en el            puntuales, tareas ad-hoc,
+                                     mismo commit                         o cuando el PR necesite
+                                                                          discusión antes de mergear
 ```
 
 **Cowork (modo interactivo, en la compu personal):** sigue existiendo para tareas puntuales donde Nicolás quiere estar mirando en tiempo real, pero ya no intenta comitear al repo — sus conectores de GitHub y Drive tienen bugs conocidos de escritura (quedan "Conectados" pero sin herramientas funcionales). Cowork entrega candidato + log como descarga en la misma conversación; Nicolás decide si los sube a mano al repo o los trae directo a una sesión de nivelación.
@@ -165,21 +167,13 @@ PRINCIPIOS NO NEGOCIABLES (aplican en los dos modos)
   mapa_gaps_mercado.md de verdad.
 - Al iniciar sesión: traer lo último del repo (Sync del conector de
   GitHub en Project Knowledge, o pedir que se clone el repo directo).
-- Revisar lo pendiente de DOS fuentes posibles: los Pull Requests abiertos
-  por las Routines de Claude Code (rama claude/[país]-[fecha]), y
-  cualquier candidato/log entregado a mano desde Cowork — tratar cada uno
-  igual, línea por línea, antes de aplicar.
-- Nunca aplicar un candidato o PR completo sin revisión.
-- Antes de reescribir el xlsx oficial, mostrar el diff propuesto (qué
-  filas/celdas cambian y por qué) y esperar confirmación — regla
-  diff-first, igual que en el resto del sistema.
-- Aplicar lo aprobado al xlsx oficial con la skill de xlsx (SUM() en vez
-  de hardcodear, data_only=False, recálculo post-edición).
-- Actualizar mapa_gaps_mercado.md reflejando lo cerrado.
-- Subir de vuelta al repo el xlsx oficial y el gap map, reemplazando las
-  versiones anteriores. Mergear o cerrar en GitHub el/los PR(s) ya
-  incorporados — el merge ahí es solo registro histórico, el oficial ya
-  se actualizó a mano en este paso.
+-Los PRs de Routines (rama claude/[país]-[fecha]) ya no se revisan ni mergean acá
+— Nicolás los revisa y mergea directo en GitHub, porque cada PR ya incluye candidato
++ log + diff de gap map en el mismo paquete.
+-Este modo queda para: candidatos/logs entregados a mano desde Cowork
+(que sí siguen necesitando aplicación manual acá), sesiones de nivelación
+puntuales donde Nicolás quiere discutir antes de mergear un PR complejo,
+o para sincronizar el gap map si detecta que quedó desalineado con lo que ya está en main.
 ```
 
 ## Notas operativas
