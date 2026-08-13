@@ -146,8 +146,18 @@ MODO DE TRABAJO EN ESTE REPO
 - Al guardar el xlsx: cargar con data_only=False, usar fórmulas (no
   hardcodear totales), correr recalculo y verificar que las fórmulas
   preexistentes de otras hojas sigan intactas.
-- Abrir un Pull Request contra main con candidato + log. NUNCA mergear
-  solo — eso lo decide Nicolás en sesión de nivelación en el Chat Project.
+- Abrir un Pull Request contra main con candidato + log. El PR también
+  debe incluir la actualización correspondiente de
+  mapa_gaps_mercado2026.md — el bloque de la(s) sección(es) tocada(s) en ,
+  esta corrida, marcando ✅/🟡 según corresponda y con la fecha de la corrida.
+  NUNCA mergear solo — Nicolás revisa y mergea directamente en GitHub cuando el
+  PR (candidato + log + gap map) le alcance para confiar, sin necesidad
+  de traerlo a una sesión de Chat.
+-El gap map dentro del PR solo puede documentar estado (qué se investigó,
+ qué se encontró, qué falta) — nunca puede incluir una decisión estructural
+ (reordenar categorías, renombrar/eliminar/fusionar filas). Esas siguen
+ señalizadas como "pendiente decisión de Nicolás" dentro del propio
+ texto del gap map, igual que hoy.
 - No decidir cambios estructurales (columnas nuevas, orden de categorías)
   — dejarlo anotado en el log y en la descripción del PR para que
   Nicolás lo resuelva.
