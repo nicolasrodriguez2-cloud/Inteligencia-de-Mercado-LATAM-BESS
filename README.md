@@ -5,7 +5,7 @@ Repo de trabajo del tracking de clientes potenciales BESS en LATAM (Nicolás, PM
 ## Contenido del repo
 
 ```
-/BESS_POTENTIAL_CLIENTS_v2.xlsx     <- archivo oficial. Sin fecha en el nombre, siempre.
+/BESS_POTENTIAL_CLIENTS.xlsx     <- archivo oficial. Sin fecha en el nombre, siempre.
 /mapa_gaps_mercado2026.md           <- gap map oficial. Sin fecha en el nombre, siempre.
 /CLAUDE.md                          <- instrucciones que Claude Code lee automáticamente al trabajar en este repo (Routines).
 /README.md                          <- este archivo
