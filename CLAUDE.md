@@ -137,7 +137,7 @@ PRINCIPIOS NO NEGOCIABLES
 MODO DE TRABAJO EN ESTE REPO
 - NUNCA commitear directo a main. Cada corrida trabaja en su propia rama:
   claude/[país]-[fecha] (ej. claude/colombia-2026-08-18).
-- En esa rama: editar BESS_POTENTIAL_CLIENTS_v2.xlsx DIRECTAMENTE (ya no
+- En esa rama: editar BESS_POTENTIAL_CLIENTS.xlsx DIRECTAMENTE (ya no
   se genera un candidato_[país]_[fecha].xlsx separado) — mismo
   formato/unidades que ya existen, no reordenar categorías, no tocar
   fórmulas de otras hojas.
@@ -151,13 +151,13 @@ MODO DE TRABAJO EN ESTE REPO
   fuente | confirmado/estimado — en inglés, salvo nombres propios).
 - Guardar copias fechadas de los tres archivos tocados en /historial/,
   con el nombre prefijado en formato YYYYMMDD_ (fecha de esta corrida):
-    /historial/YYYYMMDD_BESS_POTENTIAL_CLIENTS_v2.xlsx  (snapshot del
+    /historial/YYYYMMDD_BESS_POTENTIAL_CLIENTS.xlsx  (snapshot del
       oficial, YA con los cambios de esta corrida aplicados)
     /historial/YYYYMMDD_mapa_gaps_mercado2026.md         (ídem)
     /historial/YYYYMMDD_log_[país].md                    (el log de
       esta corrida — reemplaza la convención anterior de dejar el log
       suelto en la raíz)
-  El archivo activo en la raíz (BESS_POTENTIAL_CLIENTS_v2.xlsx,
+  El archivo activo en la raíz (BESS_POTENTIAL_CLIENTS.xlsx,
   mapa_gaps_mercado2026.md) NUNCA lleva fecha en el nombre — el prefijo
   de fecha es exclusivo de las copias en /historial/.
 - Al guardar el xlsx: cargar con data_only=False, usar fórmulas (no
