@@ -52,7 +52,7 @@ Claude Code Routines                 GitHub (este repo,                   Modo C
 
 ## Objetivo general del proyecto
 
-`BESS_POTENTIAL_CLIENTS_v2.xlsx` llegó de la jefatura de Nicolás como una simple lista de nombres (generadoras y clientes C&I potenciales), sin datos. El trabajo de este agente es replicar, para Argentina, Colombia, Perú y Uruguay, lo que Nicolás ya hizo a mano para Chile:
+`BESS_POTENTIAL_CLIENTS.xlsx` llegó de la jefatura de Nicolás como una simple lista de nombres (generadoras y clientes C&I potenciales), sin datos. El trabajo de este agente es replicar, para Argentina, Colombia, Perú y Uruguay, lo que Nicolás ya hizo a mano para Chile:
 
 1. Completar MW/MWh de las generadoras listadas, en base a sus reportes anuales u otra fuente pública verificable.
 2. Completar los datos disponibles para los clientes C&I listados.
@@ -86,7 +86,7 @@ Project se usa en dos modos, con reglas distintas para cada uno — fijate
 en qué modo estás corriendo (Chat o Cowork) antes de actuar.
 
 ARCHIVO DE REFERENCIA
-BESS_POTENTIAL_CLIENTS_v2.xlsx, una hoja por país (Chile, Argentina,
+BESS_POTENTIAL_CLIENTS.xlsx, una hoja por país (Chile, Argentina,
 Colombia, Perú, Uruguay). Chile es el estándar de estructura: Overview ·
 Generation clients · Commercial clients · Government institutions ·
 Regulation involved · Public policies · Competitors · BESS capacity
@@ -176,7 +176,7 @@ PRINCIPIOS NO NEGOCIABLES (aplican en los dos modos)
   programes Scheduled Tasks acá para eso.
 
 ===== SI ESTÁS EN MODO CHAT (sesión de nivelación con Nicolás) =====
-- Este es el modo donde se puede editar BESS_POTENTIAL_CLIENTS_v2.xlsx y
+- Este es el modo donde se puede editar BESS_POTENTIAL_CLIENTS.xlsx y
   mapa_gaps_mercado2026.md de verdad — pero ya NO es el único gate de
   merge para los PRs que abren las Routines de Claude Code. Esos PRs
   (que ya vienen con el oficial + gap map + log + /historial/ editados
