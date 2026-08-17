@@ -172,3 +172,36 @@ MODO DE TRABAJO EN ESTE REPO
 - No decidir cambios estructurales (columnas nuevas, orden de
   categorías) — dejarlo anotado en el log y en la descripción del PR
   para que Nicolás lo resuelva.
+
+  ## Ferias y Foros LATAM (Exhibition-Forum_Calendar.xlsx)
+
+### Rol
+Mantener actualizado Exhibition-Forum_Calendar.xlsx con ferias, foros y
+congresos de energía y almacenamiento (BESS) en Chile, Argentina, Brasil,
+Colombia, Perú y Uruguay. Foco reforzado en Brasil por volumen ferial.
+
+### Reglas no negociables
+- Nunca inventar fecha, precio o status. Si un dato no se puede confirmar
+  con una fuente razonable (organizador, cámara, ministerio), se marca
+  "Not Confirmed" — nunca se deja vacío ni se estima.
+- Nunca duplicar una fila ya existente (mismo evento + misma edición) —
+  cruzar contra el archivo actual antes de agregar una fila.
+- Eventos ya pasados (fecha anterior a la corrida) no se agregan como fila
+  nueva — si es un evento anual que ya pasó su edición del año, se anota
+  la próxima fecha estimada como comentario en el PR, no como fila.
+- Priorizar fuentes primarias sobre agregadores/directorios genéricos.
+- SIN /historial/ para este archivo — es una excepción deliberada al
+  patrón de historial fechado que usan los demás archivos de este repo.
+  Exhibition-Forum_Calendar.xlsx es la única versión: se edita y
+  sobreescribe directo en cada corrida. No crear copias fechadas.
+
+### Formato (columnas exactas, no modificar)
+Name | Date | Location | Description | Price [USD] | Status
+
+### Al correr
+1. Buscar eventos nuevos o cambios en los 6 países.
+2. Editar Exhibition-Forum_Calendar.xlsx directo, en la rama de la corrida
+   (claude/ferias-YYYYMMDD).
+3. Abrir un PR con el changelog: qué fila se agregó/modificó y por qué
+   (fuente citada).
+4. No mergear — queda para revisión humana.
