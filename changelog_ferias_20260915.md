@@ -12,15 +12,27 @@ según instrucción del CLAUDE.md para este archivo.
 | Brazil Windpower 2026 | Description actualizada con pricing de 3er lote (BRL, delegate/visitor); Status pasa de "Not Confirmed (registration not yet open... waitlist only)" a "Registration Open (3rd batch pricing, as of 2026-09-15)" | Registro se abrió desde la última corrida (2026-08-17) | brazilwindpower.com.br/en/registration, accessed 2026-09-15 |
 | FENIBAT + FENILITIO 2027 | Description y Price actualizados: evento gratuito solo para industria (sujeto a aprobación); Status aclara que la apertura de inscripciones estaba programada para 2026-09-15 pero la página seguía mostrando "Closed" al momento de la consulta | Fecha de apertura de inscripción ya alcanzada, se verificó el estado real | fenibat.com/en/inscricao, accessed 2026-09-15 |
 
-## Filas nuevas (5)
+## Filas nuevas (6)
 
 | Evento | País | Fecha | Fuente |
 |---|---|---|---|
+| Energyear Argentina 2026 | Argentina | 16-17 sept 2026, Buenos Aires | energyear.com/en/argentina, energyear.com/en/eventos-2026, accessed 2026-09-15 |
 | CIGRE Argentina — Seminario BESS 2026 | Argentina | 27-28 oct 2026, Buenos Aires | sites.google.com/site/cigrearg (CIGRE Argentina), accessed 2026-09-15 |
 | Forum Energy Storage Brasil (6th Edition) | Brasil | 18-19 nov 2026, São Paulo | saopaulo.energystoragebrasil.com, accessed 2026-09-15 |
 | The smarter E South America 2027 | Brasil | 24-26 ago 2027, São Paulo | thesmartere.com.br, accessed 2026-09-15 |
 | 18° Congreso Internacional de Energía (Congreso Energía Perú) | Perú | 11-12 mar 2027, Lima | congresoenergiaperu.com, accessed 2026-09-15 |
 | XVI CLAGTEE 2026 | Chile | 28-30 oct 2026, Santiago | eie.pucv.cl / clagtee2026.org, accessed 2026-09-15 |
+
+**Corrección respecto a la primera versión de este PR:** la primera pasada de búsqueda
+no encontró el circuito internacional Energyear (activo en LATAM desde 2013, con
+ediciones propias por país) — quedó fuera de los términos de búsqueda usados. Al
+revisarlo se detectó que Energyear Argentina 2026 se realiza el 16-17 de septiembre de
+2026 (esta semana respecto a la fecha de esta corrida), por lo que se agregó. El resto
+del tour Energyear LATAM 2026 ya visible en energyear.com/en/eventos-2026 (Brasil 4-5
+feb, Perú 9 mar, Chile 11-12 mar, Colombia 6-7 may, Caribe 8-9 jul, Centroamérica 14-15
+jul) ya había ocurrido para la fecha de esta corrida y no se agrega como fila nueva,
+según la regla de eventos pasados del CLAUDE.md. No se publicó fecha 2027 para esas
+ediciones al momento de la consulta.
 
 Todas las filas nuevas siguen el formato exacto de columnas (Name | Date | Location |
 Description | Price [USD] | Status) y el estilo de celda (fuente, wrap, alto de fila,
