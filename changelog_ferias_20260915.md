@@ -99,6 +99,7 @@ acceso, siguiendo la regla de "nunca dejar vacío sin explicación" del CLAUDE.m
 
 Todas las fuentes fueron consultadas el 2026-09-22. Dos notas honestas sobre calidad de
 dato:
+
 - **FES Brasil** (fila "Future Energy Summit", São Paulo, 5 nov 2026): es una parada
   nueva del tour 2026 de Future Energy Summit; no se encontró agenda específica
   publicada para São Paulo al momento de la consulta — se indicó explícitamente en la
@@ -108,4 +109,67 @@ dato:
   coinciden en fecha exacta con la fila del archivo (1 oct 2026); se optó por una
   Description genérica de la franquicia FES Colombia en vez de citar cifras/fecha de
   una edición que podría no ser la misma — no se tocó la columna Date de la fila.
+
+---
+
+# Reconciliación — 2026-09-22: merge con la corrida paralela (PR #7) y ajuste a CLAUDE.md
+
+Mientras esta rama (`claude/trusting-lamport-uz2qbg`) estaba en curso, Nicolás mergeó a
+`main` otra corrida paralela (branch `claude/amazing-ride-8yfohn`, PR #7: "12 eventos
+nuevos + 5 actualizaciones") y luego actualizó `CLAUDE.md` con una corrección
+importante: **la columna Status es el estado de asistencia de BYD frente al evento
+(Inscrito, Solicitado, No asistiremos, etc.), la mantiene Nicolás a mano, y la rutina
+nunca debe escribir ni inferir un valor ahí.** Eso generó conflicto binario al intentar
+subir esta rama. Resolución aplicada:
+
+1. Se tomó la versión de `main` (38 filas, con Description ya completa en filas 15-38 y
+   Status/Price actualizados con más detalle que mi propia corrida) como base.
+2. Se le sumaron las 13 Description que esta corrida investigó para las filas
+   originales (2-14), que `main` seguía teniendo vacías.
+3. Se agregaron 5 de mis 6 filas nuevas exclusivas (CIGRE Argentina BESS 2026, Forum
+   Energy Storage Brasil, The smarter E South America 2027, XVI CLAGTEE 2026, Energyear
+   Argentina 2026) — ninguna se solapaba con las filas nuevas de la otra corrida.
+4. **Se descartó mi fila "18 Congreso Internacional de Energía (Congreso Energía
+   Perú)"**: comparte fecha y lugar exactos (11-12 marzo 2027, Country Club Lima Hotel)
+   con la fila "CIIT Perú 2027 (CIIT Latam Congress)" que ya trajo la otra corrida.
+   Verifiqué CIIT Latam Congress por separado (ciitlatamcongress.com: 9ª edición,
+   organizador propio, foco en innovación tecnológica para minería/energía/industria) y
+   es un evento real y distinto en el papel — pero dos congresos no relacionados en el
+   mismo hotel, mismos dos días, es muy poco probable. Es más probable que mi búsqueda
+   original haya mezclado resultados de "congresoenergiaperu.com" con los de
+   "ciitlatamcongress.com" en la misma consulta. Ante la duda, se prefirió no duplicar
+   información potencialmente errónea (principio de cero información errónea del
+   CLAUDE.md) y se dejó solo la versión ya verificada por la otra corrida.
+5. **Se vació la columna Status de las 5 filas nuevas agregadas en esta reconciliación**
+   (antes tenían texto tipo "Registration Open" / "Not Confirmed (...)"), para cumplir
+   la nueva regla de CLAUDE.md. Ese texto de estado de registro del evento (no de
+   asistencia de BYD) quedó conservado en la columna Description de cada fila.
+6. No se tocó el Status de ninguna fila preexistente (2-38) — se conservaron tal cual
+   estaban en `main`.
+
+## Consultas usadas por país (esta corrida, 2026-09-15 / 2026-09-22)
+
+- **Chile**: "feria congreso energía almacenamiento baterías BESS Chile 2027",
+  "Future Energy Summit Chile FES Chile 2026", "Expo Energía Santiago Chile noviembre
+  2026", "ACERA Encuentro energías renovables diciembre 2026", "CLAGTEE 2026 Santiago
+  Chile fecha precio inscripción".
+- **Argentina**: "congreso energía renovable almacenamiento Argentina 2026 2027 feria",
+  "CIGRE Argentina BESS 2026 seminario", "AHK Argentina seminario almacenamiento
+  energético BESS 2026", "Argentina Energy Week 2026 Buenos Aires", "Expo Eficiencia
+  Energética Argentina 2026", "Energyear Argentina 2026 septiembre fecha".
+- **Brasil** (foco reforzado): "feira congresso energia armazenamento baterias Brasil
+  2026", "feira storage summit Brasil 2027", "Brazil Windpower 2026 registration",
+  "Fórum Energy Storage Brasil 2026", "smarter E South America 2027 São Paulo",
+  "Intersolar South America São Paulo 2026", "FENIBAT FENILITIO 2027 inscripción".
+- **Colombia**: "feria congreso energía almacenamiento Colombia 2026 2027", "Congreso
+  Almacenamiento de Energía FISE Medellín", "Expo Solar Colombia Bogotá 2026",
+  "Cumbre del Petróleo, Gas y Energía Cartagena 2026", "Future Energy Summit Colombia
+  FES Bogotá 2026".
+- **Perú**: "feria congreso energía almacenamiento Perú 2026 2027", "Congreso Energía
+  Perú 2027 precio", "Future Energy Summit Perú FES Lima 2026" (nota: la fila que esta
+  búsqueda generó para Perú terminó descartada por posible duplicado, ver arriba).
+- **Uruguay**: "Uruguay feria congreso energía renovable 2026 2027 UTE MIEM ADME",
+  "Uruguay energy storage BESS seminario congreso baterías", "Semana de la Energía
+  Uruguay / Expo Prado / CADE", "Latam Renovables Uruguay AUDER próxima edición" — sin
+  resultado nuevo verificable; gap explícito documentado arriba.
 
