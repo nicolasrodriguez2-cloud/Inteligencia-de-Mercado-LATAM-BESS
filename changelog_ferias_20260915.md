@@ -70,3 +70,42 @@ No se modificaron las columnas ni el formato de la plantilla (Name | Date | Loca
 Description | Price [USD] | Status), tal como indica el CLAUDE.md. No se creó copia en
 `/historial/` para este archivo, dado que la instrucción del repo excluye explícitamente
 a Exhibition-Forum_Calendar.xlsx del patrón de historial fechado.
+
+---
+
+# Corrida adicional — 2026-09-22: completar Description vacías
+
+Se pidió puntualmente completar las celdas de la columna Description que habían
+quedado vacías (las 13 filas originales del archivo, cargadas antes de esta serie de
+corridas, nunca tuvieron Description). Ninguna fecha, precio ni status se modificó en
+esta pasada — solo se agregó texto en Description, cada uno con fuente y fecha de
+acceso, siguiendo la regla de "nunca dejar vacío sin explicación" del CLAUDE.md.
+
+| Fila (evento) | Fuente(s) citada(s) en Description |
+|---|---|
+| Energy Storage Latin America 5th Edition (Chile) | storagelatam.solarenergyevents.com |
+| Future Energy Summit — Santiago (FES Chile) | futurenergysummit.com |
+| Expo Energía (Chile) | expoenergia.cl, acera.cl |
+| Encuentro energías Renovables ACERA (Chile) | acera.cl, ticketmaster.cl |
+| Argentina Energy Week Summit & Exhibition | ambito.com, econojournal.com.ar |
+| Expo Eficiencia Energética (Argentina) | baferial.com, cpic.org.ar |
+| Intersolar Exhibition (Brasil) | intersolar.net.br |
+| Future Energy Summit — São Paulo (FES Brasil) | strategicenergy.eu, futurenergysummit.com |
+| Expo Solar (Colombia) | feriaexposolar.com, eltiempo.com |
+| Cumbre del Petróleo, Gas y Energía (Colombia) | campetrol.org, neventum.com |
+| Congreso Almacenamiento de Energía (Colombia) | congresoalmacenamiento.fise.co |
+| Future Energy Summit — Bogotá (FES Colombia) | futurenergysummit.com, energiaestrategica.com |
+| Future Energy Summit — Lima (FES Perú) | energiaestrategica.com |
+
+Todas las fuentes fueron consultadas el 2026-09-22. Dos notas honestas sobre calidad de
+dato:
+- **FES Brasil** (fila "Future Energy Summit", São Paulo, 5 nov 2026): es una parada
+  nueva del tour 2026 de Future Energy Summit; no se encontró agenda específica
+  publicada para São Paulo al momento de la consulta — se indicó explícitamente en la
+  Description en vez de inventar detalle.
+- **FES Colombia** (fila "Future Energy Summit", Bogotá, 1 oct 2026): las notas de
+  prensa más específicas encontradas (quinta edición, Hotel Hilton, 21-22 oct) no
+  coinciden en fecha exacta con la fila del archivo (1 oct 2026); se optó por una
+  Description genérica de la franquicia FES Colombia en vez de citar cifras/fecha de
+  una edición que podría no ser la misma — no se tocó la columna Date de la fila.
+
