@@ -181,19 +181,39 @@ congresos de energía y almacenamiento (BESS) en Chile, Argentina, Brasil,
 Colombia, Perú y Uruguay. Foco reforzado en Brasil por volumen ferial.
 
 ### Reglas no negociables
-- Nunca inventar fecha, precio o status. Si un dato no se puede confirmar
-  con una fuente razonable (organizador, cámara, ministerio), se marca
-  "Not Confirmed" — nunca se deja vacío ni se estima.
+- Nunca inventar fecha o precio. Si un dato no se puede confirmar con una
+  fuente razonable (organizador, cámara, ministerio), se marca
+  "Not Confirmed" en esa celda — nunca se deja vacío ni se estima.
+- La columna Status es el estado de BYD frente al evento (ej. Inscrito,
+  Solicitado, No asistiremos), no el estado de confirmación del evento.
+  La mantiene Nicolás manualmente. La rutina NUNCA escribe ni infiere un
+  valor en Status — filas nuevas se dejan en blanco (es lo esperado);
+  filas existentes nunca se sobreescriben ahí.
 - Nunca duplicar una fila ya existente (mismo evento + misma edición) —
   cruzar contra el archivo actual antes de agregar una fila.
 - Eventos ya pasados (fecha anterior a la corrida) no se agregan como fila
   nueva — si es un evento anual que ya pasó su edición del año, se anota
   la próxima fecha estimada como comentario en el PR, no como fila.
 - Priorizar fuentes primarias sobre agregadores/directorios genéricos.
-- SIN /historial/ para este archivo — es una excepción deliberada al
-  patrón de historial fechado que usan los demás archivos de este repo.
-  Exhibition-Forum_Calendar.xlsx es la única versión: se edita y
-  sobreescribe directo en cada corrida. No crear copias fechadas.
+- SIN /historial/ para este archivo — excepción deliberada al patrón de
+  historial fechado del resto del repo. Se edita y sobreescribe directo
+  en cada corrida, sin copias fechadas.
+- Description vacío en una fila existente es un gap a cerrar, no un dato
+  a ignorar: en cada corrida, además de agregar eventos nuevos, revisar
+  filas existentes con Description vacío y completarlas con la misma
+  metodología de búsqueda de esta sección.
+
+### Al correr
+1. Revisar el archivo actual: si hay filas con Description vacío,
+   completarlas primero (buscar por nombre del evento + país en fuente
+   oficial).
+2. Para cada uno de los 6 países, aplicar la Metodología de búsqueda de
+   arriba (incluida la pasada regional) para detectar eventos nuevos.
+3. Editar Exhibition-Forum_Calendar.xlsx directo, en la rama de la
+   corrida (claude/ferias-YYYYMMDD). Nunca tocar la columna Status.
+4. Abrir un PR con el changelog (qué fila se agregó/modificó/completó,
+   fuente citada) y las consultas usadas por país.
+5. No mergear — queda para revisión humana.
 
 ### Formato (columnas exactas, no modificar)
 Name | Date | Location | Description | Price [USD] | Status
